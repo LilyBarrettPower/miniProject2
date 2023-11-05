@@ -1,0 +1,9 @@
+
+.welcomeBackground {
+    width: 98vw;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* custom CSS styling for the image on the welcome page to ensure its centered  */
