@@ -3,12 +3,14 @@
         "id": 1,
         "email": "11barrettpl@gmail.com",
         "password": "Corban11",
+        "profilePhoto": "../src/assets/user1profile.jpg",
         "name": "User 1"
     },
     {
         "id": 2,
         "email": "annabelle@gmail.com",
         "password": "123456",
+        "profilePhoto": "../src/assets/user2profile.jpg",
         "name": "User 2"
     }
 ]
