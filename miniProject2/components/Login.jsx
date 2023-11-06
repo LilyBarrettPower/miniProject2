@@ -6,6 +6,11 @@ import { useUserContext } from "../context/UserContext";
 
 import { useNavigate } from 'react-router-dom';
 
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Container from 'react-bootstrap/Container';
+import Alert from 'react-bootstrap/Alert';
+
 function Login() {
     const navigate = useNavigate();
 
@@ -50,18 +55,22 @@ function Login() {
     // a function to reset the input values and display either a success message or a login failed message
 
     return (
-        <>
-            <label>Email:
-                <input {...emailInputProps} />
-                {/* apply the properties from the nameInputProps object into the input field */}
-            </label>
-            <label>Password:
-                <input type="password" {...passwordInputProps} />
-            </label>
-            <button onClick={handleLogin}>Login!</button>
-            {/* create a button that when clicked, calls the handleLogin function to reset the input fields */}
-            <div>{status}</div>
-        </>
+        <Container className="d-flex justify-content-center align-items-center">
+            <Form>
+                <Form.Group controlId="formBasicEmail">
+                    <Form.Label>Email:</Form.Label>
+                    <Form.Control type="email" value={emailInputProps.value} onChange={emailInputProps.onChange}/>
+                </Form.Group>
+                <Form.Group controlId="formBasicPassword">
+                    <Form.Label>Password:</Form.Label>
+                    <Form.Control type="password" value={passwordInputProps.value} onChange={passwordInputProps.onChange} />
+                </Form.Group>
+                <Button variant="secondary" onClick={handleLogin} className="mt-3">Login!</Button>
+                {status && <Alert variant={status === 'success!' ? 'success' : 'danger'} className="mt-3">
+                    {status}
+                </Alert>}
+            </Form>
+        </Container>
     );
 }
 

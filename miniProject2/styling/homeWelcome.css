@@ -1,0 +1,38 @@
+
+.welcomeContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.stickyBanner {
+    position: sticky;
+    top: 0;
+    background-color: orange;
+    z-index: 1;
+}
+
+.welcomeBanner {
+    padding: 10px;
+}
+
+.welcomeContent {
+    display: flex;
+    align-items: center;
+    padding: 70px;
+    background-color: aqua;
+}
+
+.profilePhoto {
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 10%;
+}
+
+.logOut {
+    position: absolute;
+    top: 100px;
+    right: 150px;
+}

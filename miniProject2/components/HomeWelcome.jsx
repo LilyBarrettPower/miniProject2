@@ -1,5 +1,8 @@
-import { useUserContext } from "../context/UserContext"
+import { useUserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
+import Image from 'react-bootstrap/Image';
+import Button from 'react-bootstrap/Button';
+import '../styling/homeWelcome.css';
 
 function HomeWelcome() {
 
@@ -14,14 +17,20 @@ function HomeWelcome() {
 
     return (
         <>
-            <div>
-                <span className="profile">
-                    <img src={currentUser.profilePhoto} alt="Users profile photo" />
-                    {/* Add the profile picture for each user  */}
-                </span>
-                    <h1>Welcome {currentUser.email} </h1>
-                    <button onClick={handleLogOut}>Log out</button>
+            <div className="welcomeContainer">
+                <div className="stickyBanner">
+                    <h1 className="welcomeBanner">Welcome {currentUser.email} </h1>
                 </div>
+                <div className="welcomeContent">
+                    <span className="profile">
+                        <Image src={currentUser.profilePhoto} alt="Users profile photo" className="profilePhoto" />
+                        {/* Add the profile picture for each user  */}
+                    </span>
+                    <span>
+                        <Button variant="secondary" onClick={handleLogOut} className="logOut">Log out</Button>
+                    </span>
+                </div>
+            </div>
         </>
     )
 }

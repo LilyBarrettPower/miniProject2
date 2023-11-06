@@ -7,3 +7,23 @@
     margin-right: auto;
 }
 /* custom CSS styling for the image on the welcome page to ensure its centered  */
+
+.welcome {
+    position: relative;
+    width: 100%;
+}
+
+.banner {
+    position: sticky;
+    top: 0;
+    text-align: center;
+}
+
+.welcomeMessage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 40px;
+}

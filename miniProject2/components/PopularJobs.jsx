@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col'
-import '../styling/popularJobs.css';
+import '../styling/jobCards.css';
 
 function PopularJobs() {
     const { popularJobs, loading, error } = useFetchPopular(); // use the useFetchPopular hook
@@ -39,10 +39,13 @@ function PopularJobs() {
                                 <Card.Title>{job.job_title}</Card.Title>
                                 {/* access the job_title property */}
                                 <Card.Text>
-                                    Company: {job.employer_name}
+                                    {job.employer_name}
                                     {/* access the employer_name property */}
                                 </Card.Text>
-                                <Button variant="primary" onClick={() => handleApply(job)}>Apply for job!</Button>
+                                <Card.Text className="jobDescription">
+                                    {job.job_description}
+                                </Card.Text>
+                                <Button variant="secondary" onClick={() => handleApply(job)}>Apply for job!</Button>
                                 {/* add the apply for job button */}
                             </Card.Body>
                         </Card>

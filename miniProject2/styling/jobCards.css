@@ -3,3 +3,7 @@
     max-height: 50px;
 }
 
+.jobDescription {
+    max-height: 80px;
+    overflow: auto;
+}

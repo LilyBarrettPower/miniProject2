@@ -1,0 +1,22 @@
+
+.searchContainer {
+    min-height: 50vh;
+    margin-top: 20px;
+}
+
+.searchInput {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+}
+
+Input {
+    flex-grow: 2;
+    margin-right: 10px;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+}

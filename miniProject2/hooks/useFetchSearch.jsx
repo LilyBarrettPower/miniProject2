@@ -32,6 +32,7 @@ function useFetchSearch(searchQuery) {
                     setLoading(false);
                     setError(error);
                 }
+                await new Promise(resolve => setTimeout(resolve, 2000)); //wait 2 seconds so we dont go over the API calls limit
             } else {
                 setSearchResults([]);
             }
