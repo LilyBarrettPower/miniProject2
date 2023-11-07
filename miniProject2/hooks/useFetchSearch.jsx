@@ -16,7 +16,7 @@ function useFetchSearch(searchQuery) {
                     method: 'GET',
                     headers: {
                         'X-RapidAPI-Key': '4779b413abmsh963e4efa25ad949p1b333fjsne2f5e8b85f21',
-                        'X-RapidAPI-Host': 'jsearch.p.rapidapi.com',
+                        'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
                     },
                 };
                 try {
@@ -32,14 +32,18 @@ function useFetchSearch(searchQuery) {
                     setLoading(false);
                     setError(error);
                 }
-                await new Promise(resolve => setTimeout(resolve, 2000)); //wait 2 seconds so we dont go over the API calls limit
+                await new Promise(resolve => setTimeout(resolve, 5000)); //wait 2 seconds so we dont go over the API calls limit
             } else {
                 setSearchResults([]);
             }
         };
         fetchData();
+        console.log(searchResults)
+        
     }, [searchQuery]);
     return { searchResults, loading, error };
+
+
 }
 
 export default useFetchSearch;

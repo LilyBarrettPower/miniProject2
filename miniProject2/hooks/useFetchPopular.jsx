@@ -41,7 +41,7 @@ function useFetchPopular() {
         fetchPopularJobs(); // call the fetchPopularJobs function when the component mounts 
     }, []);
 
-    console.log(popularJobs)
+    // console.log(popularJobs)
     return { popularJobs, loading, error }; // return an object containing the popularJobs, loading and error variables 
 }
 

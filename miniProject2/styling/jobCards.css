@@ -6,4 +6,15 @@
 .jobDescription {
     max-height: 80px;
     overflow: auto;
+    max-height: 85px;
+    margin-top: 10px;
+}
+
+.applyButton {
+    margin-top: auto;
+    margin-bottom: 10px;
+}
+
+.cardTitle {
+    font-size: medium;
 }

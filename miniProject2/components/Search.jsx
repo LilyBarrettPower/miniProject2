@@ -17,6 +17,8 @@ function Search() {
     };
     // When handleApply is called, redirect the user to that jobs apply link in a new window
 
+    //console.log(searchResults);
+
     return (
         <div>
             <Container className="searchContainer">
@@ -38,15 +40,17 @@ function Search() {
                     <Row>
                         {searchResults.map((job) => (
                             <Col xs={12} md={4} lg={4} xl={4} key={job.job_id} className="mb-5">
-                                <Card style={{ width: '24rem', height: '18rem' }}>
+                                <Card style={{ width: '24rem', height: '20rem' }}>
                                     <Card.Img src={job.employer_logo} alt={`${job.employer_name} Logo`} className="employerLogo" />
-                                    <Card.Body>
-                                        <Card.Title>{job.job_title}</Card.Title>
-                                        <Card.Text>{job.employer_name}</Card.Text>
+                                    <Card.Body className="cardBody">
+                                            <Card.Title className="cardTitle">{job.job_title}</Card.Title>
+                                            <Card.Text>{job.employer_name}</Card.Text>
+                                        <div>
                                         <Card.Text className="jobDescription">
                                             {job.job_description}
                                         </Card.Text>
-                                        <Button variant="secondary" onClick={() => handleApply(job)}>Apply for job!</Button>
+                                            <Button variant="secondary" onClick={() => handleApply(job)} className="applyButton">Apply for job!</Button>
+                                        </div>
                                     </Card.Body>
                                 </Card>
                             </Col>
