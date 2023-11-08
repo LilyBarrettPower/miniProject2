@@ -21,5 +21,19 @@ Input {
     padding: 10px;
 }
 
+.pageButton {
+    padding: 10px;
+    margin: 10px;
+}
 
+.pageNumber {
+    margin-top: 20px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
 

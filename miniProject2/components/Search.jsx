@@ -11,16 +11,23 @@ import '../styling/search.css';
 
 function Search() {
     const [searchQuery, setSearchQuery] = useState('');
-    const { searchResults, loading, error, fetchData } = useFetchSearch(searchQuery);
+    const { searchResults, loading, error, fetchData, currentPage, setCurrentPage } = useFetchSearch(searchQuery);
 
     const handleSearch = () => {
-        fetchData(searchQuery);
+        setCurrentPage(1);
+        fetchData(searchQuery, currentPage);
     }
 
     const handleApply = (job) => {
         window.open(job.job_apply_link, '_blank');
     };
     // When handleApply is called, redirect the user to that jobs apply link in a new window
+
+    const handlePageChange = (newPage) => {
+        setCurrentPage(newPage);
+        fetchData(searchQuery, newPage);
+    }
+
     return (
         <div>
             <Container className="searchContainer">
@@ -61,8 +68,15 @@ function Search() {
                     </Container>
                 ) : (
                     <p className="body">No search results found</p>
-                )
-                } </Container>
+                )}
+                {searchResults.length > 0 && (
+                    <div className="pagination">
+                        <Button variant="secondary" disabled={currentPage === 1} onClick={() => handlePageChange(currentPage - 1)} className="pageButton body">Previous page</Button>
+                        <span className="pageNumber body">Page {currentPage} </span>
+                        <Button variant="secondary" onClick={() => handlePageChange(currentPage + 1)} className="pageButton body">Next page</Button>
+                    </div>
+                )}
+            </Container>
         </div>
     );
 }

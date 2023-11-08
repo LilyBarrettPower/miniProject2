@@ -1,17 +1,19 @@
+import { useState } from "react";
 
-import { useState} from "react";
 
 function useFetchSearch(searchQuery) {
     const [searchResults, setSearchResults] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [currentPage, setCurrentPage] = useState(1);
+    const resultsPerPage = 10;
 
    
-     const fetchData = async (searchQuery) => {
+     const fetchData = async (searchQuery, page) => {
             if (searchQuery) {
                 setLoading(true);
 
-                
+                const offset = (page - 1) * resultsPerPage;
                 const url = `https://jsearch.p.rapidapi.com/search?query=${searchQuery}&page=1&num_pages=1`;
                 const options = {
                     method: 'GET',
@@ -38,7 +40,7 @@ function useFetchSearch(searchQuery) {
                 setSearchResults([]);
             }
      };
-    return { searchResults, loading, error, fetchData };
+    return { searchResults, loading, error, fetchData, currentPage, setCurrentPage };
 };
 
 

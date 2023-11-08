@@ -55,7 +55,7 @@ function Login() {
     // a function to reset the input values and display either a success message or a login failed message
 
     return (
-        <Container className="d-flex justify-content-center align-items-center">
+        <Container className="d-flex justify-content-center align-items-center mt-3">
             <Form>
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label className="headings">Email:</Form.Label>
@@ -65,7 +65,7 @@ function Login() {
                     <Form.Label className="headings">Password:</Form.Label>
                     <Form.Control type="password" value={passwordInputProps.value} onChange={passwordInputProps.onChange} />
                 </Form.Group>
-                <Button variant="secondary" onClick={handleLogin} className="mt-3 body">Login!</Button>
+                <Button variant="secondary" onClick={handleLogin} className="my-3 body">Login!</Button>
                 {status && <Alert variant={status === 'success!' ? 'success' : 'danger'} className="mt-3">
                     {status}
                 </Alert>}
