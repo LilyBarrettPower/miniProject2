@@ -1,8 +1,11 @@
+import '../styling/footer.css'
 
 function Footer() {
     return (
         <>
-            <p className="text-center">Copywrite - Lily Barrett-Power</p>
+            <div className="footerContainer">
+            <p className="footer text-center headings">Copywrite - Lily Barrett-Power &copy;</p>
+            </div>
         </>
     )
 }

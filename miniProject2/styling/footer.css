@@ -1,0 +1,14 @@
+
+.footerContainer {
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+}
+
+.footer {
+    background-color: #253237;
+    padding: 40px;
+    position: sticky;
+    bottom: 0;
+    color: white;
+}
