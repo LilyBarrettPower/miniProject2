@@ -7,24 +7,27 @@
 .stickyBanner {
     position: sticky;
     top: 0;
-    background-color: orange;
+    background-color: #253237;
     z-index: 1;
+    color: white;
+
 }
 
 .welcomeBanner {
-    padding: 10px;
+    padding: 30px;
+    text-align: center;
 }
 
 .welcomeContent {
     display: flex;
     align-items: center;
-    padding: 70px;
-    background-color: aqua;
+    padding: 30px;
+    background-color: #9DB4C0;
 }
 
 .profilePhoto {
     position: absolute;
-    top: 100px;
+    top: 135px;
     right: 20px;
     width: 80px;
     height: 80px;
@@ -33,6 +36,6 @@
 
 .logOut {
     position: absolute;
-    top: 100px;
+    top: 150px;
     right: 150px;
 }

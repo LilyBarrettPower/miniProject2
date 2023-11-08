@@ -8,7 +8,7 @@ function Welcome() {
         <>
             <div className="welcome">
                 <div className="banner">
-                    <h1 className="welcomeMessage">Welcome to Job Search Pro!</h1>
+                    <h1 className="welcomeMessage headings">Welcome to Job Search Pro!</h1>
                     <Image src="../src/assets/welcomeBackground.jpg" alt="background image" className="welcomeBackground"/>
                 </div>
             </div>

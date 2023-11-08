@@ -1,16 +1,17 @@
+
+import Search from "../components/Search";
 import HomeWelcome from "../components/HomeWelcome";
-import PopularJobs from "../components/PopularJobs";
+import { useUserContext } from "../context/UserContext";
 import Footer from "../components/Footer";
 
-function HomePage() {
-
+function SearchPage() {
     return (
         <>
             <HomeWelcome></HomeWelcome>
-            <PopularJobs></PopularJobs>
+            <Search></Search>
             <Footer></Footer>
         </>
     )
 }
 
-export default HomePage;
+export default SearchPage;

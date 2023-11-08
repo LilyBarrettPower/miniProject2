@@ -58,14 +58,14 @@ function Login() {
         <Container className="d-flex justify-content-center align-items-center">
             <Form>
                 <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email:</Form.Label>
+                    <Form.Label className="headings">Email:</Form.Label>
                     <Form.Control type="email" value={emailInputProps.value} onChange={emailInputProps.onChange}/>
                 </Form.Group>
                 <Form.Group controlId="formBasicPassword">
-                    <Form.Label>Password:</Form.Label>
+                    <Form.Label className="headings">Password:</Form.Label>
                     <Form.Control type="password" value={passwordInputProps.value} onChange={passwordInputProps.onChange} />
                 </Form.Group>
-                <Button variant="secondary" onClick={handleLogin} className="mt-3">Login!</Button>
+                <Button variant="secondary" onClick={handleLogin} className="mt-3 body">Login!</Button>
                 {status && <Alert variant={status === 'success!' ? 'success' : 'danger'} className="mt-3">
                     {status}
                 </Alert>}

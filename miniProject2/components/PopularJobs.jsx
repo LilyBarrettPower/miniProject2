@@ -17,10 +17,10 @@ function PopularJobs() {
     // When handleApply is called, redirect the user to that jobs apply link in a new window
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div className="body">Loading...</div>;
     }
     if (error) {
-        return <div>Error: {error.message}</div>;
+        return <div className="body">Error: {error.message}</div>;
     }
 
     // console.log(popularJobs.data);
@@ -28,24 +28,24 @@ function PopularJobs() {
 
     return (
         <Container>
-            <h2>Popular jobs:</h2>
+            <h2 className="headings jobHeading">Popular jobs:</h2>
             <Row>
                 {popularJobs.data.map((job) => ( //transfrom the popularJobs.data array, each job is mapped to an individual list item
                     <Col xs={12} md={4} lg={4} xl={4} key={job.job_id} className="mb-5">
-                        <Card style={{ width: '24rem', height: '20rem' }}>
+                        <Card style={{ width: '24rem', height: '20rem', padding: '5px'}}>
                             <Card.Img variant="top" src={job.employer_logo} alt={`${job.employer_name} Logo`} className="employerLogo" />
                             {/* display the employers logo beside the job title */}
                             <Card.Body>
-                                <Card.Title className="cardTitle">{job.job_title}</Card.Title>
+                                <Card.Title className="cardTitle headings">{job.job_title}</Card.Title>
                                 {/* access the job_title property */}
-                                <Card.Text>
+                                <Card.Text className="body">
                                     {job.employer_name}
                                     {/* access the employer_name property */}
                                 </Card.Text>
-                                <Card.Text className="jobDescription">
+                                <Card.Text className="jobDescription body">
                                     {job.job_description}
                                 </Card.Text>
-                                <Button variant="secondary" onClick={() => handleApply(job)} className="applyButton">Apply for job!</Button>
+                                <Button variant="secondary" onClick={() => handleApply(job)} className="applyButton body">Apply for job!</Button>
                                 {/* add the apply for job button */}
                             </Card.Body>
                         </Card>

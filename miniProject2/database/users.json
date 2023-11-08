@@ -4,6 +4,7 @@
         "email": "11barrettpl@gmail.com",
         "password": "Corban11",
         "profilePhoto": "../src/assets/user1profile.jpg",
+        "bio": "This is Lily's bio",
         "name": "User 1"
     },
     {
@@ -11,6 +12,7 @@
         "email": "annabelle@gmail.com",
         "password": "123456",
         "profilePhoto": "../src/assets/user2profile.jpg",
+        "bio": "This is Annabelle's bio",
         "name": "User 2"
     }
 ]

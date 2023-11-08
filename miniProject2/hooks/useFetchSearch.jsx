@@ -1,16 +1,17 @@
 
-import { useState, useEffect } from "react";
+import { useState} from "react";
 
 function useFetchSearch(searchQuery) {
-    const [searchResults, setSearchResults] = useState('');
+    const [searchResults, setSearchResults] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
-
-    useEffect(() => {
-        const fetchData = async () => {
+   
+     const fetchData = async (searchQuery) => {
             if (searchQuery) {
                 setLoading(true);
+
+                
                 const url = `https://jsearch.p.rapidapi.com/search?query=${searchQuery}&page=1&num_pages=1`;
                 const options = {
                     method: 'GET',
@@ -32,18 +33,13 @@ function useFetchSearch(searchQuery) {
                     setLoading(false);
                     setError(error);
                 }
-                await new Promise(resolve => setTimeout(resolve, 5000)); //wait 2 seconds so we dont go over the API calls limit
+                await new Promise(resolve => setTimeout(resolve, 2000)); //wait 2 seconds so we dont go over the API calls limit
             } else {
                 setSearchResults([]);
             }
-        };
-        fetchData();
-        console.log(searchResults)
-        
-    }, [searchQuery]);
-    return { searchResults, loading, error };
+     };
+    return { searchResults, loading, error, fetchData };
+};
 
-
-}
 
 export default useFetchSearch;
