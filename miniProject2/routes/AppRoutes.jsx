@@ -13,6 +13,7 @@ function AppRoutes() {
                 <Route path="/home" element={<HomePage />} />
                 <Route path="/search" element={<SearchPage />}/>
             <Route path="/profile" element={<ProtectedRoute />} >
+                {/* This is my protected route */}
                 <Route index element={<ProfilePage />} />
                 </Route>
             <Route index element={<Navigate to="/login" />} />

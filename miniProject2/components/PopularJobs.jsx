@@ -30,9 +30,11 @@ function PopularJobs() {
         <Container>
             <h2 className="headings jobHeading">Popular jobs:</h2>
             <Row>
-                {popularJobs.data.map((job) => ( //transfrom the popularJobs.data array, each job is mapped to an individual list item
+                {/* using the bootstrap cards t o display the jobs */}
+                {popularJobs.data.map((job) => ( //iterate over each job in the popularJobs array and create a card for each 
                     <Col xs={12} md={4} lg={4} xl={4} key={job.job_id} className="mb-5">
-                        <Card style={{ width: '24rem', height: '20rem', padding: '5px'}}>
+                        <Card style={{ width: '24rem', height: '20rem', padding: '5px' }}>
+                            {/* inline styling */}
                             <Card.Img variant="top" src={job.employer_logo} alt={`${job.employer_name} Logo`} className="employerLogo" />
                             {/* display the employers logo beside the job title */}
                             <Card.Body>
@@ -44,9 +46,10 @@ function PopularJobs() {
                                 </Card.Text>
                                 <Card.Text className="jobDescription body">
                                     {job.job_description}
+                                    {/* Access the job_description property */}
                                 </Card.Text>
                                 <Button variant="secondary" onClick={() => handleApply(job)} className="applyButton body">Apply for job!</Button>
-                                {/* add the apply for job button */}
+                                {/* add the apply for job button, call the handleApply function when pressed  */}
                             </Card.Body>
                         </Card>
                     </Col>

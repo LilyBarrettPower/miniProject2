@@ -3,9 +3,9 @@ import { useLoginInput } from "../hooks/useLoginInput"
 import { useState, useEffect } from "react";
 // import useEffect from React to fetch the users data from my JSON file
 import { useUserContext } from "../context/UserContext";
-
+// import useNavigate
 import { useNavigate } from 'react-router-dom';
-
+// Import bootstrap components:
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
@@ -13,6 +13,7 @@ import Alert from 'react-bootstrap/Alert';
 
 function Login() {
     const navigate = useNavigate();
+    // Use the useNavigate hook from React
 
     const { handleUpdateUser } = useUserContext();
     // access the handleUpdateUser function from the context
@@ -31,7 +32,7 @@ function Login() {
             .then(data => setUsersData(data))
             .catch(error => console.error("Error fetching the users data:", error));
     }, []);
-    // create a useEffect to fetch the users data when the component mounts
+    // create a useEffect to fetch the users data when the component mounts from the internal JSON file
 
 
     function handleLogin() {
@@ -48,15 +49,18 @@ function Login() {
             setStatus('success!');
             handleUpdateUser(user);
             navigate('/home');
+            // When the login is successful, reset the email and password, call the handleUpdateUser from the context and navigate the user to the home page
         } else {
             setStatus('Login failed. Please check credentials.')
+            // if login unsucessful, display an error message
         }
     }
-    // a function to reset the input values and display either a success message or a login failed message
 
     return (
         <Container className="d-flex justify-content-center align-items-center mt-3">
+            {/*bootstrap classes for styling */}
             <Form>
+                {/* using the bootstrap form component for the login form */}
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label className="headings">Email:</Form.Label>
                     <Form.Control type="email" value={emailInputProps.value} onChange={emailInputProps.onChange}/>
@@ -67,6 +71,7 @@ function Login() {
                 </Form.Group>
                 <Button variant="secondary" onClick={handleLogin} className="my-3 body">Login!</Button>
                 {status && <Alert variant={status === 'success!' ? 'success' : 'danger'} className="mt-3">
+                    {/* set an alert as the ststus of the login  */}
                     {status}
                 </Alert>}
             </Form>

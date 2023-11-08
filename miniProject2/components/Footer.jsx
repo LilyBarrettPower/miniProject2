@@ -1,4 +1,5 @@
 import '../styling/footer.css'
+// import the custom CSS styling for the footer
 
 function Footer() {
     return (

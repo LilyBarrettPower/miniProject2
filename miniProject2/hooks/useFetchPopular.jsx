@@ -15,7 +15,7 @@ function useFetchPopular() {
         async function fetchPopularJobs() {
             // using an async function to fetch the data
             const cachedData = localStorage.getItem('popularJobs');
-            if (cachedData) {
+            if (cachedData) { //cache the data to localStorage to minimise API calls
                 setPopularJobs(JSON.parse(cachedData));
                 setLoading(false);
             } else {
