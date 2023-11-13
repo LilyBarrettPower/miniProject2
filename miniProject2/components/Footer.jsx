@@ -5,7 +5,7 @@ function Footer() {
     return (
         <>
             <div className="footerContainer">
-            <p className="footer text-center headings">Copywrite - Lily Barrett-Power &copy;</p>
+            <p className="footer text-center headings">Copyright - Lily Barrett-Power &copy;</p>
             </div>
         </>
     )

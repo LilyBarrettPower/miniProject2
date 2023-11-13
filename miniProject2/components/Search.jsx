@@ -58,7 +58,7 @@ function Search() {
                             {searchResults.map((job) => (
                                 <Col xs={12} md={4} lg={4} xl={4} key={job.job_id} className="mb-5">
                                     {/* using bootstrap to make the columns style */}
-                                    <Card style={{ width: '24rem', height: '20rem', padding: '5px' }}>
+                                    <Card style={{ width: '24rem', height: '22rem', padding: '5px' }}>
                                         <Card.Img src={job.employer_logo} alt={`${job.employer_name} Logo`} className="employerLogo" />
                                         <Card.Body className="cardBody">
                                             <Card.Title className="cardTitle headings">{job.job_title}</Card.Title>

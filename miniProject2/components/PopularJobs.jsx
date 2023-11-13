@@ -33,7 +33,7 @@ function PopularJobs() {
                 {/* using the bootstrap cards t o display the jobs */}
                 {popularJobs.data.map((job) => ( //iterate over each job in the popularJobs array and create a card for each 
                     <Col xs={12} md={4} lg={4} xl={4} key={job.job_id} className="mb-5">
-                        <Card style={{ width: '24rem', height: '20rem', padding: '5px' }}>
+                        <Card style={{ width: '24rem', height: '22rem', padding: '5px' }}>
                             {/* inline styling */}
                             <Card.Img variant="top" src={job.employer_logo} alt={`${job.employer_name} Logo`} className="employerLogo" />
                             {/* display the employers logo beside the job title */}
